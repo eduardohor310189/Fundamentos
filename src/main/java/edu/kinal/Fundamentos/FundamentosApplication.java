@@ -61,8 +61,12 @@ public class FundamentosApplication implements CommandLineRunner {
 
 	public static void eliminar() {
 		Scanner leer = new Scanner(System.in);
-		System.out.print("Ingrese el numero de la tarea que desea eliminar ");
-		int numTarea = leer.nextInt();
+		System.out.println("Ingrese el numero de la tarea que desea eliminar ");
+		for (int i = 0; i < tareas.size(); i++) {
+			System.out.println("Tarea:".concat(String.valueOf(tareas.get(i).getNumero())).concat("-").concat(tareas.get(i).getDescripcion()));
+		}
+			int numTarea = leer.nextInt();
+
 		for (int i = 0; i < tareas.size(); i++) {
 			if (tareas.get(i).getNumero() == numTarea) {
 				tareas.remove(i);
